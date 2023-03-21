@@ -7,9 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Lang;
 use ReflectionClass;
 
 class Dto extends DataTransferObject
@@ -22,19 +20,20 @@ class Dto extends DataTransferObject
             ? Arr::only($request->all(), $reflection->getShortName())
             : $request->only($model->getFillable());
             if ($isAggregate) {
-
             if (Arr::exists($data[$reflection->getShortName()], 'id')) {
                 $id = $request->id;
                 $request->merge(['id' => $data[$reflection->getShortName()]['id']]);
                 $validator = Validator::make($data[$reflection->getShortName()], $model->rules());
-                $request->merge(['id' => $id]);
+               // $request->merge(['id' => $id]);
                 unset($id);
             } else {
                 $validator = Validator::make($data[$reflection->getShortName()], $model->rules());
             }
         } else {
             $validator = Validator::make($data, $model->rules());
+            if (Arr::exists($request->all(), 'id')) {
             $data = array_merge($data, ['id' => $request->id]);
+            }
         }
         if ($validator->fails()) {
             throw new ValidationException($validator);

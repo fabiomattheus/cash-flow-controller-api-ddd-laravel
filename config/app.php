@@ -183,8 +183,6 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
-
-
         /*
          * Package Service Providers...
          */
@@ -194,21 +192,11 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        App\Providers\HelpServiceProvider::class,
-        App\Providers\AddressServiceProvider::class,
-        App\Providers\ContactServiceProvider::class,
-        App\Providers\LegalPersonServiceProvider::class,
-        App\Providers\PhysicalPersonServiceProvider::class,
-        App\Providers\RequesterServiceProvider::class,
-        App\Providers\TenantServiceProvider::class,
-        App\Providers\ChatFileServiceProvider::class,
+        App\Providers\CashFlowServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\HelpRequestServiceProvider::class,
-        App\Providers\StoreFilesServiceProvider::class,
-        App\Providers\GenerateCodeServiceProvider::class,
-
+       
     ],
 
     /*

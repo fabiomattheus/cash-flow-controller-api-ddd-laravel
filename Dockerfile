@@ -6,6 +6,8 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 # Install extensions
 RUN install-php-extensions pdo_mysql bcmath opcache redis gd
 
+RUN echo 'memory_limit = 2048M' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini;
+
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
@@ -23,10 +25,10 @@ RUN apk --no-cache add bash mysql-client mariadb-connector-c-dev
 
 # Create user based on provided user ID
 ARG HOST_UID
-RUN adduser --disabled-password --gecos "" --uid $HOST_UID demo
+RUN adduser --disabled-password --gecos "" --uid $HOST_UID mttechne-test
 
 # Switch to that user
-USER demo
+USER mttechne-test
 
 
 #FROM backend as worker

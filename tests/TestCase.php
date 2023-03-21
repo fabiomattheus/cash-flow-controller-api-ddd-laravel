@@ -2,6 +2,9 @@
 
 namespace Tests;
 
+use Domain\Aggregates\CashFlowBalance;
+use Domain\Entities\CashFlow;
+use Domain\Entities\Departament;
 use Tests\Builders\ChatBuilder;
 use Tests\Builders\HelpBuilder;
 use Tests\Builders\TenantBuilder;
@@ -16,53 +19,34 @@ use Tests\Builders\PhysicalPersonBuilder;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Tests\Builders\CashFlowBalanceBuilder;
+use Tests\Builders\CashFlowBuilder;
+use Tests\Builders\DepartamentBuilder;
+use Tests\Builders\EmployeeBuilder;
+use Tests\Builders\OperationTypeBuilder;
 
 abstract class TestCase extends BaseTestCase
 {
   // use CreatesApplication;
   use CreatesApplication, DatabaseTransactions, DatabaseMigrations;
 
-    public function Contact(): ContactBuilder{
-        return new ContactBuilder;
+    public function CashFlow(): CashFlowBuilder{
+        return new CashFlowBuilder;
     }
 
-    public function Address(): AddressBuilder{
-        return new AddressBuilder;
+    public function cashFlowBalance(): CashFlowBalanceBuilder{
+        return new CashFlowBalanceBuilder();
     }
 
-    public function Chat(): ChatBuilder{
-        return new ChatBuilder;
+    public function Departament(): DepartamentBuilder{
+        return new DepartamentBuilder;
     }
 
-    public function ChatFile(): ChatFileBuilder{
-        return new ChatFileBuilder;
+    public function operationType(): OperationTypeBuilder{
+        return new OperationTypeBuilder;
     }
 
-    public function Help(): HelpBuilder{
-        return new HelpBuilder;
-    }
-
-    public function HelpRequest(): HelpRequestBuilder{
-        return new HelpRequestBuilder;
-    }
-
-    public function LegalPerson(): LegalPersonBuilder{
-        return new LegalPersonBuilder;
-    }
-    
-    public function PhysicalPerson(): PhysicalPersonBuilder{
-        return new PhysicalPersonBuilder;
-    }
-
-    public function PurchaseItem(): PurchaseItemBuilder{
-        return new PurchaseItemBuilder;
-    }
-
-    public function Requester(): RequesterBuilder{
-        return new RequesterBuilder;
-    }
-
-    public function Tenant(): TenantBuilder{
-        return new TenantBuilder;
+    public function employee(): EmployeeBuilder{
+        return new EmployeeBuilder;
     }
 }

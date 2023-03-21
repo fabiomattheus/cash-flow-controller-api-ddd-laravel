@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use Application\Services\Contracts\HelpRequest\GenerateCodeInterface;
-use Domain\Services\HelpRequest\GenerateCode;
 use Illuminate\Support\ServiceProvider;
 
 class GenerateCodeServiceProvider extends ServiceProvider
@@ -15,7 +13,7 @@ class GenerateCodeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(GenerateCodeInterface::class, GenerateCode::class);
+      //  $this->app->bind(GenerateCodeInterface::class, GenerateCode::class);
     }
 
     /**

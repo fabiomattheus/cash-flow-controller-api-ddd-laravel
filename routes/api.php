@@ -1,7 +1,11 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Presentation\Controllers\Api\CashFlow\AddCashFlowApiController;
+use Presentation\Controllers\Api\CashFlow\DeleteCashFlowApiController;
+use Presentation\Controllers\Api\CashFlow\FindCashFlowByIdApiController;
+use Presentation\Controllers\Api\CashFlow\UpdateCashFlowApiController;
+use Presentation\Controllers\Api\CashFlow\FindAllCashFlowsByDateApiController;
 use Presentation\Controllers\Api\HelpApiController;
 use Presentation\Controllers\Api\HelpRequestApiController;
 
@@ -31,4 +35,13 @@ Route::prefix('v1')->namespace('api')->group(function () {
     Route::post('/help-request/create', [HelpRequestApiController::class, 'create'])->name('api.helpRequest.create');
     Route::get('/help-request/find/{id}', [HelpRequestApiController::class, 'getById'])->name('api.helpRequest.find');
 
+});
+
+
+Route::prefix('v1')->namespace('api')->group(function () {
+    Route::post('/cash-flow/add', [AddCashFlowApiController::class, 'add'])->name('api.cash.flow.create');
+    Route::get('/cash-flow/find/{id}', [FindCashFlowByIdApiController::class, 'findById'])->name('api.cash.flow.find.by.id');
+    Route::put('/cash-flow/update', [UpdateCashFlowApiController::class, 'update'])->name('api.cash.flow.update');
+    Route::delete('/cash-flow/delete', [DeleteCashFlowApiController::class, 'delete'])->name('api.cash.flow.destroy');
+    Route::get('/cash-flow/find-all-by-date/{initialDate}/{finalDate}/{type}/{page}', [FindAllCashFlowsByDateApiController::class, 'findAllByDate'])->name('api.cash.flow.find.all.by.date');
 });

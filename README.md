@@ -10,6 +10,8 @@ Este projeto é um contexto delimitado de fluxo de caixa, onde em novas versões
 
 ## Mapeamento dos Contextos
 
+![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/context_mapping.png)
+
 ## Diagrama de Caso de Uso Adicionar Fluxo de Caixa
 
 ## Descrição do Caso de Uso Adicionar Fluxo de Caixa

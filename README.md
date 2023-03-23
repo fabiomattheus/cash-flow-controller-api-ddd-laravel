@@ -13,21 +13,25 @@ Este projeto é um contexto delimitado de fluxo de caixa, onde em novas versões
 ![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/context_mapping.png)
 
 ## Diagrama de Caso de Uso Adicionar Fluxo de Caixa
+![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/add_cash_flow_use_case_diagram.png)
 
 ## Descrição do Caso de Uso Adicionar Fluxo de Caixa
 
 ## Diagrama de Caso de Uso Atualizar Fluxo de Caixa
+![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/update_cah_flow_use_case_diagram.drawio.png)
 
 ## Descrição do Caso de Uso Atualizar Fluxo de Caixa
 
 ## Diagrama de Caso de Uso Deletar Fluxo de Caixa
+![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/update_cah_flow_use_case_diagram.drawio.png)
 
 ## Descrição do Caso de Uso Deletar Fluxo de Caixa
 
 ## Diagrama de Caso de Uso Localizar Fluxo de Caixa por Id
+![alt text]()
 
 ## Descrição do Caso de Uso Localizar Fluxo de Caixa por Id
 
 ## Diagrama de Caso de Uso Localizar Todos Fluxos de Caixa por Data
-
+![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/find_all_cash_flow_by_date.drawio.png)
 ## Descrição do Caso de Uso Localizar Fluxo Todoss de Caixa por data

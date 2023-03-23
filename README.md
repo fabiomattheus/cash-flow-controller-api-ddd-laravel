@@ -178,12 +178,6 @@ O usuário envia para Api a data inicial e/ou data final inválida e/ou typo e/o
 ### E2 -
 Api retorna uma mensagem de erro informando o ocorido.
 
-### Fluxo de Exceção
-### E1 -
-O usuário envia para Api o id inválido do fluxo de caixa que deseja obter
-### E2 -
-Api retorna uma mensagem de erro informando o ocorido.
-
 ### Fluxo de Alternativo
 ### A1
 O usuário envia somente a data inicial para Api para obeter todos os fluxos de caixa regitarados na data inicial;

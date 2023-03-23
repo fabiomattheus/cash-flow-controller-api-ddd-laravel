@@ -84,15 +84,15 @@ O usuário envia para api dados pertinentes ao fluxo de caixa, como:
  employee_id (Id do Funcionário).
  cash_flow_balance {id, balance} .
 
-### P4 - 
+### P2 - 
 O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de dominio (UpdateCashFlow) a atualização do Fluxo de caixa, que, por sua vez, antes solictar o registro da atulização, solicita ao DTO o filtro e validação dos dados pertinentes a atualização do Fluxo de Caixa; 
-### P5 - 
+### P3 - 
 O DTO filtra e valida os dados pertinentes a atualização do fluxo de caixa e retorna pra o serviço de dominio (UpdateCashFlow) um array com os dados validados e prontos para sererm persistidos;
-### P6 - 
+### P4 - 
 O Serviço de Dominio (UpdateCashFlow) envia para o repositório os dados retornados pelo DTO para que sejam persistidos;
-### P7 - 
+### P5 - 
 O reposiório registra os dados pertinentes a atualização fluxo de caixa;
-### P8 -
+### P6 -
 O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de dominio (UpdateCashFlowBalance) que atualize saldo; 
 ### P7 - 
 serviço de dominio (UpdateCashFlowBalance) solicita ao repositório a atualização do saldo de acordo com o tipo (Crédito ou Debito)
@@ -112,6 +112,27 @@ Api retorna uma mensagem de erro informando o ocorido.
 ![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/update_cah_flow_use_case_diagram.drawio.png)
 
 ## Descrição do Caso de Uso Deletar Fluxo de Caixa
+## Descrição do Caso de Uso Atualizar Fluxo de Caixa
+### Fluxo de Eventos:
+### 1 - Fluxo Principal:
+### P1 - 
+O usuário envia para Api o id do fluxo de caixa que deseja deletar
+### P2 - 
+O serviço de aplicação (DelegateCashFlowDelete) delega ao serviço de dominio (DeleteCashFlow) que delete o Fluxo de caixa pertinente ao id disponível na requisição (request), que, por sua vez, antes solictar a exclução, solicita ao Value Objeto IdVO a validação do id ; 
+### P3 - 
+O IdVo valida o Id e fica disponivel pra o serviço de dominio (DeleteCashFlow) enviá-lo para o repositório;
+### P4 - 
+O Serviço de Dominio (DeleteCashFlow) envia para o repositório o Value Object IdVO para exclução do Fluxo de Caixa pertinente ao Id;
+### P5 - 
+O reposiório deleta o fluxo de caixa;
+### P6 -
+O serviço de aplicação (DelegateCashFlowDelete) retorna um mensage de sucesso; 
+
+### Fluxo de Exceção
+### E1 -
+O usuário envia para Api o id inválido do fluxo de caixa que deseja deletar
+### E2 -
+Api retorna uma mensagem de erro informando o ocorido.
 
 ## Diagrama de Caso de Uso Localizar Fluxo de Caixa por Id
 ![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/find_cash_flow_by_id.drawio.png)

@@ -26,6 +26,6 @@ Este projeto é um contexto delimitado de fluxo de caixa, onde em novas versões
 
 ## Descrição do Caso de Uso Localizar Fluxo de Caixa por Id
 
-## Diagrama de Caso de Uso Localizar todos Fluxo de Caixa por Data
+## Diagrama de Caso de Uso Localizar Todos Fluxo de Caixa por Data
 
 ## Descrição do Caso de Uso Localizar Fluxo Todos de Caixa por data

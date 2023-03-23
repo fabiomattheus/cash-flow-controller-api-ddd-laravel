@@ -9,3 +9,23 @@ O projeto contempla de serviços como: Adicionar Fluxo de Caixa,  atualizar Flux
 Este projeto é um contexto delimitado de fluxo de caixa, onde em novas versões, os dados dos funcionários e deparatamentos serão alimentados por outro projeto de Rh em um contexto delimitado através de mensageria que, por sua vez, será desenvolvido em um microserviço separado em .Net.  
 
 ## Visão geral dos Contextos
+
+## Diagrama de Caso de Uso Adicionar Fluxo de Caixa
+
+## Descrição do Caso de Uso Adicionar Fluxo de Caixa
+
+## Diagrama de Caso de Uso Atualizar Fluxo de Caixa
+
+## Descrição do Caso de Uso Atualizar Fluxo de Caixa
+
+## Diagrama de Caso de Uso Deletar Fluxo de Caixa
+
+## Descrição do Caso de Uso Deletar Fluxo de Caixa
+
+## Diagrama de Caso de Uso Localizar Fluxo de Caixa por Id
+
+## Descrição do Caso de Uso Localizar Fluxo de Caixa por Id
+
+## Diagrama de Caso de Uso Localizar todos Fluxo de Caixa por Data
+
+## Descrição do Caso de Uso Localizar Fluxo Todos de Caixa por data

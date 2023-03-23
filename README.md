@@ -48,7 +48,7 @@ O DTO filtra e valida os dados pertinentes ao fluxo de caixa e retorna pra o ser
 O Serviço de Dominio (AddCashFlow) envia para o repositório os dados retornados pelo DTO para que sejam persistidos;
 ### P7 - 
 O reposiório registra os dados pertinentes ao fluxo de caixa;
-## P8 -
+### P8 -
 O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de dominio (AddCashFlowBalance) que atualize saldo; 
 ### P7 - 
 serviço de dominio (AddCashFlowBalance) solicita ao repositório a atualização do saldo de acordo com o tipo (Crédito ou Debito)
@@ -57,10 +57,11 @@ O reposiório registra os dados no banco de dados a saldo do fluxo de caixa.
 ### P9  -
 O serviço de aplicação retorna um mensagem de sucesso para o usuário.
 
-## Fluxo de Exceção
-## P1 -
+### Fluxo de Exceção
+
+### E1 -
 O usuário envia para api um ou varios dados inválidos pertinentes ao fluxo de caixa
-## P2 -
+### E2 -
 Api retorna uma mensagem de erro informando o ocorido.
 
 ## Diagrama de Caso de Uso Atualizar Fluxo de Caixa

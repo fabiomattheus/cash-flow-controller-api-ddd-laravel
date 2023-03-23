@@ -68,6 +68,45 @@ Api retorna uma mensagem de erro informando o ocorido.
 ![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/update_cah_flow_use_case_diagram.drawio.png)
 
 ## Descrição do Caso de Uso Atualizar Fluxo de Caixa
+### Fluxo de Eventos:
+### 1 - Fluxo Principal:
+### P1 - 
+O usuário envia para api dados pertinentes ao fluxo de caixa, como:
+ id (Id do Fluxo de Caixa )
+ identifier (Identificador)
+ description (Descrição);
+ type[Credit, Debit] (Tipo (Credito ou Débito));
+ value (Valor);
+ note (Oberservação);
+ movimentation_date (Data de movimentação);
+ departament_id (Id do deparatamento);
+ operation_type_id (Id do Tipo da Opração);
+ employee_id (Id do Funcionário).
+ cash_flow_balance {id, balance} .
+
+### P4 - 
+O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de dominio (UpdateCashFlow) a atualização do Fluxo de caixa, que, por sua vez, antes solictar o registro da atulização, solicita ao DTO o filtro e validação dos dados pertinentes a atualização do Fluxo de Caixa; 
+### P5 - 
+O DTO filtra e valida os dados pertinentes a atualização do fluxo de caixa e retorna pra o serviço de dominio (UpdateCashFlow) um array com os dados validados e prontos para sererm persistidos;
+### P6 - 
+O Serviço de Dominio (UpdateCashFlow) envia para o repositório os dados retornados pelo DTO para que sejam persistidos;
+### P7 - 
+O reposiório registra os dados pertinentes a atualização fluxo de caixa;
+### P8 -
+O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de dominio (UpdateCashFlowBalance) que atualize saldo; 
+### P7 - 
+serviço de dominio (UpdateCashFlowBalance) solicita ao repositório a atualização do saldo de acordo com o tipo (Crédito ou Debito)
+### P8 -
+O reposiório registra os dados atualizado no banco de dados.  
+### P9  -
+O serviço de aplicação retorna um mensagem de sucesso para o usuário.
+
+### Fluxo de Exceção
+
+### E1 -
+O usuário envia para api um ou varios dados inválidos pertinentes ao fluxo de caixa
+### E2 -
+Api retorna uma mensagem de erro informando o ocorido.
 
 ## Diagrama de Caso de Uso Deletar Fluxo de Caixa
 ![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/update_cah_flow_use_case_diagram.drawio.png)

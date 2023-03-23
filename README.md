@@ -18,7 +18,7 @@ Este projeto é um contexto delimitado de fluxo de caixa, onde em novas versões
 ## Descrição do Caso de Uso Adicionar Fluxo de Caixa
 Este caso de uso permite que um usuário adicione um fluxo de caixa, podendo ser do tipo crédito ou débito;
 ### Atores:
-Usuário do sietema.
+Usuário do sistema.
 ### Pré condições:
 o usuário deverá ser um funcionário.
 ### Pós Condições:

@@ -28,7 +28,7 @@ Este projeto é um contexto delimitado de fluxo de caixa, onde em novas versões
 ## Descrição do Caso de Uso Deletar Fluxo de Caixa
 
 ## Diagrama de Caso de Uso Localizar Fluxo de Caixa por Id
-![alt text]()
+![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/find_cash_flow_by_id.drawio.png)
 
 ## Descrição do Caso de Uso Localizar Fluxo de Caixa por Id
 

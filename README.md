@@ -184,26 +184,23 @@ O usuário envia para Api o id inválido do fluxo de caixa que deseja obter
 ### E2 -
 Api retorna uma mensagem de erro informando o ocorido.
 
-## Diagrama de Caso de Uso Localizar Todos Fluxos de Caixa por Data
-![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/find_all_cash_flow_by_date.drawio.png)
-
-## Descrição do Caso de Uso Localizar Fluxo Todos de Caixa por data
-### P1
-O usuário envia para Api a data inicial, data Final e o tipo (Credito ou Débito) para obeter todos o fluxos de caixa regitarado entre a data inicial à data final e o tipo;
+### Fluxo de Alternativo
+### A1
+O usuário envia somente a data inicial para Api para obeter todos os fluxos de caixa regitarados na data inicial;
 ### P2 - 
 O serviço de dominio (FindAllCashFlowByDate) solicita ao Value Objeto DateVO e TypeVO a validação da data inicial, data final e o tipo(Crédito ou Debito) disponível na requisição (request); 
 ### P3 - 
-O TypeVo valida o Id e fica disponivel pra o serviço de dominio (FindAllCashFlowByDate) enviá-lo para o repositório;
+O TypeVo valida ao verificar que o tipo é nulo, adiona o valor 'all' para obter tanto fluxos de caixa do tipo crédito quanto fluxo de caixa do tipo débito e fica disponivel pra o serviço de dominio (FindAllCashFlowByDate) enviá-lo para o repositório;
 ### P3 - 
-O DateVo valida a data inicial e a data final e fica disponivel pra o serviço de dominio (FindAllCashFlowByDate) enviá-lo para o repositório;
+O DateVo ao verificar que a data final é nula, adiciona a data inicial disponível na requisição (request) e fica disponivel pra o serviço de dominio (FindAllCashFlowByDate) enviá-lo para o repositório;
 ### P4 - 
-O serviço de dominio (FindAllCashFlowByDate) envia para o repositório os Value Objects TypeVO, DateVo, o número da página e a quantidade de itens a ser paginado  e obetido e os envia para o repositório;
+O serviço de dominio (FindAllCashFlowByDate) envia para o repositório os Value Objects TypeVO, DateVo, o número da página e a quantidade de itens a ser paginado e obetido, e os envia para o repositório;
 ### P5 - 
 O reposiório retorna os fluxo de caixas;
 
 ### Fluxo de Exceção
 ### E1 -
-O usuário envia para Api a data inicial e/ou data final inválida e/ou typo e/ou numero de pagina errada para obeter os fluxos de caixa que desejado
+O usuário envia para Api a data inicial inválida e os demais parametros(data final, typo e pagina)
 ### E2 -
 Api retorna uma mensagem de erro informando o ocorido.
 

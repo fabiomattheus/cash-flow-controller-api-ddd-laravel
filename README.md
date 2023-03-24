@@ -188,7 +188,7 @@ O TypeVo ao verificar que o tipo (type) é nulo, adiona o valor 'all' a key type
 O DateVo ao verificar que a data final é nula, adiciona o valor da data inicial (initialDate) na key finalDate (Data final), disponível na requisição (request) e fica disponivel pra o serviço de dominio (FindAllCashFlowByDate) enviá-lo para o repositório;
 ### A5 - 
 O serviço de dominio (FindAllCashFlowByDate) envia para o repositório os Value Objects TypeVO, DateVo e a page;
-### P5 - 
+### A6 - 
 O reposiório retorna os fluxo de caixas;
 
 ### Fluxo de Exceção

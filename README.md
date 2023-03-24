@@ -181,7 +181,7 @@ A Api retorna uma mensagem de erro informando o ocorido.
 ### A1
 O usuário envia somente a data inicial e os demais parametros nulos (Data final (FinalDate), pagina (Page) e tipo (Type) para Api obeter todos os fluxos de caixa regitarados na data informada;
 ### A2 - 
-O serviço de domínio (FindAllCashFlowByDate) solicita ao Value Objeto DateVO a validação da data inicial(InitialDate) e data final (FinalDate), e o e TypeVO a validação do type(tipo(Crédito ou Debito)) disponível na requisição (request); 
+O serviço de domínio (FindAllCashFlowByDate) solicita ao Value Objeto DateVO a validação da data inicial(InitialDate) e data final (FinalDate), e ao TypeVO a validação do type(tipo(Crédito ou Debito)) disponível na requisição (request); 
 ### A3 - 
 O TypeVo ao verificar que o tipo (type) é nulo, adiona o valor 'all' a key type para obter tanto fluxos de caixa do tipo crédito quanto aos fluxos de caixa do tipo débito e fica disponível para o serviço de dominio (FindAllCashFlowByDate) enviá-lo para o repositório;
 ### A4 - 

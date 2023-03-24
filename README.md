@@ -195,5 +195,5 @@ O reposiório retorna os fluxo de caixas;
 ### E1 -
 O usuário envia para Api a data inicial (initialDate) inválida e os demais parametros(data final (finalDate), tipo (type) e página (page)) nulos;
 ### E2 -
-A Api retorna uma mensagem de erro informando o ocorido.
+A Api retorna uma mensagem de erro informando o ocorrido.
 

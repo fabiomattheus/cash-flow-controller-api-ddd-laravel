@@ -33,7 +33,7 @@ O usuário envia para api dados pertinentes ao fluxo de caixa, como:
  note (Oberservação);
  movimentation_date (Data de movimentação);
  departament_id (Id do deparatamento);
- operation_type_id (Id do Tipo da Opração);
+ operation_type_id (Id do Tipo da Operação);
  employee_id (Id do Funcionário).
 
 ### P2 -

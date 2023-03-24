@@ -16,7 +16,7 @@ Este projeto é um contexto delimitado de fluxo de caixa, onde em novas versões
 ![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/add_cash_flow_use_case_diagram.png)
 
 ## Descrição do Caso de Uso Adicionar Fluxo de Caixa
-Este caso de uso permite que um usuário adicione um fluxo de caixa, podendo ser do tipo crédito ou débito;
+Este caso de uso permite que um usuário adicione um fluxo de caixa, podendo ser do tipo crédito ou débito.
 ### Atores:
 Usuário do sistema.
 ### Pré condições:

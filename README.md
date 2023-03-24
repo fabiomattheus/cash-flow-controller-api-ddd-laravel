@@ -52,11 +52,11 @@ O reposiório registra os dados pertinentes ao fluxo de caixa;
 O Serviço de Dominio (AddCashFlow) adiciona o id do fluxo de caixa registrado a key cash_flow_id para que seja validado e registardo futuramente como foreing key no registro do saldo na tabela cash_flow_balanses);
 ### P9 -
 O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de domínio (AddCashFlowBalance) que adicione o saldo (Balance); 
-### P7 - 
+### P10 - 
 O serviço de domínio (AddCashFlowBalance) solicita ao repositório a adição do saldo do fluxo de caixa;
-### P8 -
+### P11 -
 O reposiório registra os dados no banco de dados;  
-### P9  -
+### P12  -
 O serviço de aplicação (DelegateCashFlowAdd) retorna uma mensagem de sucesso para o usuário.
 
 ### Fluxo de Exceção

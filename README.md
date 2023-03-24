@@ -26,7 +26,7 @@ Fluxo de caixa registrado.
 ### Fluxo de Eventos:
 ### 1 - Fluxo Principal:
 ### P1 - 
-O usuário envia para api dados pertinentes ao fluxo de caixa, como:
+O usuário envia para Api dados pertinentes ao fluxo de caixa, como:
  description (Descrição);
  type[Credit, Debit] (Tipo (Credito ou Débito));
  value (Valor);

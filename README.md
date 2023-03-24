@@ -106,7 +106,7 @@ O serviço de aplicação (DelegateCashFlowUpdate) retorna uma mensagem de suces
 ### E1 -
 O usuário envia para Api um ou varios dados inválidos pertinentes ao fluxo de caixa
 ### E2 -
-A Api retorna uma mensagem de erro informando o ocorido.
+A Api retorna uma mensagem de erro informando o ocorrido.
 
 ## Diagrama de Caso de Uso Deletar Fluxo de Caixa
 ![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/update_cah_flow_use_case_diagram.drawio.png)
@@ -152,7 +152,7 @@ O reposiório localiza e retorna o fluxo de caixa;
 ### E1 -
 O usuário envia para Api um id inválido do fluxo de caixa que deseja obter
 ### E2 -
-A Api retorna uma mensagem de erro informando o ocorido.
+A Api retorna uma mensagem de erro informando o ocorrido.
 
 ## Diagrama de Caso de Uso Localizar Todos Fluxos de Caixa por Data
 ![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/find_all_cash_flow_by_date.drawio.png)
@@ -175,7 +175,7 @@ O reposiório retorna os fluxo de caixas;
 ### E1 -
 O usuário envia para Api a data inicial (initialDate)invalida e/ou data final (finalDate) inválida e/ou tipo (type) inválido e/ou página (page) inválida para obeter os fluxos de caixa desejados
 ### E2 -
-A Api retorna uma mensagem de erro informando o ocorido.
+A Api retorna uma mensagem de erro informando o ocorrido.
 
 ### Fluxo de Alternativo
 ### A1

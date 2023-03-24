@@ -126,7 +126,7 @@ A Api retorna uma mensagem de erro informando o ocorrido.
 ### P1 - 
 O usuário envia para Api o id do fluxo de caixa que deseja deletar
 ### P2 - 
-O serviço de aplicação (DelegateCashFlowDelete) delega ao serviço de dominio (DeleteCashFlow) que delete o Fluxo de caixa pertinente ao id disponível na requisição (request), que, por sua vez, antes de solictar a exclução, solicita ao Value Objeto IdVO a validação do id  disponível na requisição (request); 
+O serviço de aplicação (DelegateCashFlowDelete) delega ao serviço de dominio (DeleteCashFlow) que delete o Fluxo de caixa pertinente ao id disponível na requisição (request), que, por sua vez, antes de solictar a exclução, solicita ao Value Objeto IdVO a validação do id disponível na requisição (request); 
 ### P3 - 
 O IdVO valida o id e fica disponível para o serviço de domínio (DeleteCashFlow) enviá-lo para o repositório;
 ### P4 - 
@@ -135,7 +135,6 @@ O serviço de dominio (DeleteCashFlow) envia para o repositório o Value Object 
 O reposiório deleta o fluxo de caixa;
 ### P6 -
 O serviço de aplicação (DelegateCashFlowDelete) retorna um mensagem de sucesso; 
-
 ### Fluxo de Exceção
 ### E1 -
 O usuário envia para Api o id inválido do fluxo de caixa que deseja deletar

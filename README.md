@@ -101,9 +101,13 @@ O reposiório registra os dados pertinentes à atualização do fluxo de caixa;
 ### P6 -
 O serviço de aplicação (DelegateCashFlowUpdate) delega ao serviço de domínio (UpdateCashFlowBalance) que atualize saldo; 
 ### P7 - 
-O serviço de domínio (UpdateCashFlowBalance) solicita ao repositório à atualização do saldo;
-### P8 -
-O reposiório atualiza os dados do fluxo de caixa no banco de dados.  
+O serviço de domínio (UpdateCashFlowBalance) solicita ao DTO a validação dos dados;
+### P8 - 
+O DTO filtra e valida os dados pertinentes à atualização do slado do fluxo de caixa e retorna para o serviço de domínio (UpdateCashFlow) um array com os dados validados e prontos para serem persistidos.  
+### P9 - 
+O serviço de domínio (UpdateCashFlowBalance) envia para o repositório o array retornado pelo DTO e solicita a atualização;
+### P10 -
+O reposiório atualiza os dados de saldo do fluxo de caixa no banco de dados.  
 ### P9  -
 O serviço de aplicação (DelegateCashFlowUpdate) retorna uma mensagem de sucesso para o usuário.
 

@@ -49,7 +49,7 @@ O serviço de domínio (AddCashFlow) envia para o repositório os dados retornad
 ### P7 - 
 O reposiório registra os dados pertinentes ao fluxo de caixa;
 ### P8 - 
-O serviço de domínio (AddCashFlow) adiciona o id do fluxo de caixa registrado à key cash_flow_id para que seja validado e registrado futuramente como foreign key no registro do saldo na tabela cash_flow_balances);
+O serviço de domínio (AddCashFlow) adiciona o id do fluxo de caixa registrado à key cash_flow_id na requisição (request), para que, seja validado atráves do serviço de domínio (AddCashFlowBalance) e registrado futuramente como foreign key no registro do saldo na tabela cash_flow_balances);
 ### P9 -
 O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de domínio (AddCashFlowBalance) que adicione o saldo (Balance); 
 ### P10 - 

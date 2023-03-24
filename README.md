@@ -45,7 +45,7 @@ O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de dominio (A
 ### P5 - 
 O DTO filtra e valida os dados pertinentes ao fluxo de caixa e retorna pra o serviço de dominio (AddCashFlow), um array com os dados validados e pronto para sererm persistidos;
 ### P6 - 
-O Serviço de Dominio (AddCashFlow) envia para o repositório os dados retornados pelo DTO para que sejam persistidos;
+O serviço de Dominio (AddCashFlow) envia para o repositório os dados retornados pelo DTO para que sejam persistidos;
 ### P7 - 
 O reposiório registra os dados pertinentes ao fluxo de caixa;
 ### P8 - 

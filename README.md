@@ -3,7 +3,7 @@
 Api de Gerenciamento de Fluxo de Caixa desenvolvida em Laravel/PHP com o Pradrão de Projeto DDD 
 
 ## Conteúdo do Projeto
-O projeto contempla de serviços como: Adicionar Fluxo de Caixa,  Atualizar Fluxo de Caixa, Deletar Fluxo de Caixa, Localizar Fluxo de Caixa por Id e Localizar Todos Fluxos de caixa por Data (Esse serviço é responsável de obter um consolidado diario ou entre um range de datas). 
+O projeto contempla de serviços como: Adicionar Fluxo de Caixa,  Atualizar Fluxo de Caixa, Deletar Fluxo de Caixa, Localizar Fluxo de Caixa por Id e Localizar Todos Fluxos de Caixa por Data (Esse serviço é responsável de obter um consolidado diário ou entre um range de datas). 
 
 ## Contexto Delimitado
 Este projeto é um contexto delimitado de fluxo de caixa, onde em novas versões, os dados dos funcionários e deparatamentos deste projeto serão alimentados por outro outro contexto delimitado, um projeto de RH através de mensageria que, por sua vez, será desenvolvido em um microserviço a parte em .Net.  

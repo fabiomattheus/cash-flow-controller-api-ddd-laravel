@@ -41,7 +41,7 @@ O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de dominio (G
 ### P3 - 
 O serviço de domínio (GenerateIdentifier) gera um identificador único e faz um merge com os dados da requisição (request), adicionando o valor do mesmo a uma key identifier;
 ### P4 - 
-O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de domínio (AddCashFlow) a criação do Fluxo de caixa, que, por sua vez, antes solictar o registro ao repositório, solicita ao DTO o filtro e validação dos dados pertinentes ao fluxo de caixa; 
+O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de domínio (AddCashFlow) a criação do Fluxo de caixa, que, por sua vez, antes de solictar o registro ao repositório, solicita ao DTO o filtro e validação dos dados pertinentes ao fluxo de caixa; 
 ### P5 - 
 O DTO filtra e valida os dados pertinentes ao fluxo de caixa e retorna pra o serviço de dominio (AddCashFlow) um array com os dados validados e prontos para sererm persistidos;
 ### P6 - 

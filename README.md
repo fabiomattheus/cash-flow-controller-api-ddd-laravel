@@ -108,7 +108,7 @@ O DTO filtra e valida os dados pertinentes à atualização do slado do fluxo de
 O serviço de domínio (UpdateCashFlowBalance) envia para o repositório o array retornado pelo DTO e solicita a atualização;
 ### P10 -
 O reposiório atualiza os dados de saldo do fluxo de caixa no banco de dados.  
-### P9  -
+### P11  -
 O serviço de aplicação (DelegateCashFlowUpdate) retorna uma mensagem de sucesso para o usuário.
 
 ### Fluxo de Exceção

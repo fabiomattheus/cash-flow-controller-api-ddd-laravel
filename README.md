@@ -59,9 +59,9 @@ O serviço de domínio (AddCashFlowBalance) solicita ao DTO que valide os dados 
 O DTO filtra e valida os dados pertinentes ao saldo do fluxo de caixa e retorna para o serviço de dominio (AddCashFlowBalance) um array com os dados validados e prontos para sererm persistidos;
 ### P12 - 
 O serviço de domínio (AddCashFlowBalance) solicita ao repositório a adição dados pertinentes ao saldo do fluxo de caixa (balance (saldo) e cash_flow_id (foreign key));
-### P12 -
+### P13 -
 O reposiório registra os dados no banco de dados;  
-### P13  -
+### P14  -
 O serviço de aplicação (DelegateCashFlowAdd) retorna uma mensagem de sucesso para o usuário.
 
 ### Fluxo de Exceção

@@ -1,6 +1,6 @@
 # Cash Flow Comtroller Api DDD Laravel
 
-Api de Gerencimanto de Fluxo de Caixa desenvolvida em Laravel/PHP com o Pradrão de Projeto DDD 
+Api de Gerenciamento de Fluxo de Caixa desenvolvida em Laravel/PHP com o Pradrão de Projeto DDD 
 
 ## Conteúdo do Projeto
 O projeto contempla de serviços como: Adicionar Fluxo de Caixa,  Atualizar Fluxo de Caixa, Deletar Fluxo de Caixa, Localizar Fluxo de Caixa por Id e Localizar Todos Fluxos de caixa por Data (Esse serviço é responsável de obter um consolidado diario ou entre um range de datas). 

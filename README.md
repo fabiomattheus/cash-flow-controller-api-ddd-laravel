@@ -53,10 +53,14 @@ O serviço de domínio (AddCashFlow) adiciona o id do fluxo de caixa registrado 
 ### P9 -
 O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de domínio (AddCashFlowBalance) que adicione os dados pertinentes ao saldo do fluxo de caixa (CashFlowBalance); 
 ### P10 - 
+O serviço de domínio (AddCashFlowBalance) solicita ao DTO que valide os dados pertinetes ao saldo do Fluxo de Caixa (CashFlowBalance)
+### P11 - 
+O DTO filtra e valida os dados pertinentes ao saldo do fluxo de caixa e retorna pra o serviço de dominio (AddCashFlowBalance) um array com os dados validados e prontos para sererm persistidos;
+### P11 - 
 O serviço de domínio (AddCashFlowBalance) solicita ao repositório a adição do saldo do fluxo de caixa;
-### P11 -
+### P12 -
 O reposiório registra os dados no banco de dados;  
-### P12  -
+### P13  -
 O serviço de aplicação (DelegateCashFlowAdd) retorna uma mensagem de sucesso para o usuário.
 
 ### Fluxo de Exceção

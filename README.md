@@ -165,11 +165,11 @@ O usuário envia para Api a data inicial (initialDate), data final (finalDate), 
 O serviço de dominio (FindAllCashFlowByDate) solicita ao Value Objeto DateVO a validação da data inicial (InitalDate) e a validação da data final (finalDate), e ao Value Objeto TypeVO a validação tipo (Type) disponível na requisição (request); 
 ### P3 - 
 O TypeVo valida o Tipo (Type) e fica disponivel pra o serviço de dominio (FindAllCashFlowByDate) enviá-lo para o repositório;
-### P3 - 
-O DateVo valida a data inicial e a data final, e fica disponível pra o serviço de dominio (FindAllCashFlowByDate) enviá-lo para o repositório;
 ### P4 - 
-O serviço de dominio (FindAllCashFlowByDate) envia para o repositório os Value Objects TypeVO, DateVo, page;
+O DateVo valida a data inicial e a data final, e fica disponível pra o serviço de dominio (FindAllCashFlowByDate) enviá-lo para o repositório;
 ### P5 - 
+O serviço de dominio (FindAllCashFlowByDate) envia para o repositório os Value Objects TypeVO, DateVo, page;
+### P6 - 
 O reposiório retorna os fluxo de caixas;
 ### Fluxo de Exceção
 ### E1 -

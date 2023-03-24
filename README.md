@@ -38,7 +38,7 @@ O usuário envia para Api dados pertinentes ao fluxo de caixa, como:
  employee_id (Id do Funcionário).
 
 ### P2 -
-O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de dominio (GenrateIdentifier) a geração de um identifcador único do fluxo de caixa;
+O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de domínio (GenrateIdentifier) a geração de um identifcador único do fluxo de caixa;
 ### P3 - 
 O serviço de domínio (GenerateIdentifier) gera um identificador único e faz um merge com os dados da requisição (request), adicionando o valor do mesmo a uma key identifier;
 ### P4 - 
@@ -50,15 +50,15 @@ O serviço de domínio (AddCashFlow) envia para o repositório os dados retornad
 ### P7 - 
 O reposiório registra os dados pertinentes ao fluxo de caixa;
 ### P8 - 
-O serviço de domínio (AddCashFlow) adiciona o id do fluxo de caixa registrado à key cash_flow_id na requisição (request), para que, seja validado atráves do serviço de domínio (AddCashFlowBalance) e registrado futuramente como foreign key junto com o registro do balance (saldo) na tabela cash_flow_balances);
+O serviço de domínio (AddCashFlow) adiciona o id do fluxo de caixa registrado à key cash_flow_id na requisição (request), para que, seja validado atráves do serviço de domínio (AddCashFlowBalance) e registrado futuramente como foreign key junto com o registro do balance (saldo) na tabela cash_flow_balances;
 ### P9 -
-O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de domínio (AddCashFlowBalance) que adicione os dados pertinentes ao saldo do fluxo de caixa, balance (Saldo) e cash_flow_id (foreign key); 
+O serviço de aplicação (DelegateCashFlowAdd) delega ao serviço de domínio (AddCashFlowBalance) que adicione os dados pertinentes ao saldo do fluxo de caixa, balance (saldo) e cash_flow_id (foreign key); 
 ### P10 - 
 O serviço de domínio (AddCashFlowBalance) solicita ao DTO que valide os dados pertinetes ao saldo do fluxo de caixa;
 ### P11 - 
 O DTO filtra e valida os dados pertinentes ao saldo do fluxo de caixa e retorna para o serviço de dominio (AddCashFlowBalance) um array com os dados validados e prontos para sererm persistidos;
 ### P12 - 
-O serviço de domínio (AddCashFlowBalance) solicita ao repositório a adição dados pertinentes ao saldo do fluxo de caixa (balance (saldo) e cash_flow_id (foreign key));
+O serviço de domínio (AddCashFlowBalance) solicita ao repositório a adição dos dados pertinentes ao saldo do fluxo de caixa, balance (saldo) e cash_flow_id (foreign key);
 ### P13 -
 O reposiório registra os dados no banco de dados;  
 ### P14  -
@@ -170,11 +170,11 @@ A Api retorna uma mensagem de erro informando o ocorrido.
 O usuário envia para Api a data inicial (initialDate), data final (finalDate), o Tipo (type (Credito ou Débito)), a página (page);
 ### Nota: A página (page) enviada para Api trata-se de um número para obter itens paginados.  
 ### P2 - 
-O serviço de dominio (FindAllCashFlowByDate) solicita ao Value Objeto DateVO a validação da data inicial (InitalDate) e a validação da data final (finalDate), e ao Value Objeto TypeVO a validação tipo (Type) disponível na requisição (request); 
+O serviço de dominio (FindAllCashFlowByDate) solicita ao Value Objeto DateVO a validação da data inicial (initalDate) e a validação da data final (finalDate), e ao Value Objeto TypeVO a validação tipo (Type) disponível na requisição (request); 
 ### P3 - 
-O TypeVo valida o Tipo (Type) e fica disponivel pra o serviço de dominio (FindAllCashFlowByDate) enviá-lo para o repositório;
+O TypeVo valida o Tipo (Type) e fica disponivel para o serviço de domínio (FindAllCashFlowByDate) enviá-lo para o repositório;
 ### P4 - 
-O DateVo valida a data inicial e a data final, e fica disponível pra o serviço de dominio (FindAllCashFlowByDate) enviá-lo para o repositório;
+O DateVo valida a data inicial e a data final, e fica disponível para o serviço de domínio (FindAllCashFlowByDate) enviá-lo para o repositório;
 ### P5 - 
 O serviço de dominio (FindAllCashFlowByDate) envia para o repositório os Value Objects TypeVO, DateVo, page;
 ### P6 - 
@@ -187,7 +187,7 @@ A Api retorna uma mensagem de erro informando o ocorrido.
 
 ### Fluxo de Alternativo
 ### A1
-O usuário envia somente a data inicial (initialDate) e os demais parametros nulos (Data final (pinalDate), pagina (page) e tipo (type) para Api obeter todos os fluxos de caixa regitarados na data informada;
+O usuário envia somente a data inicial (initialDate) e os demais parametros (Data final (finalDate), pagina (page) e tipo (type)) nulos para Api obeter todos os fluxos de caixa regitarados na data informada;
 ### A2 - 
 O serviço de domínio (FindAllCashFlowByDate) solicita ao Value Objeto DateVO a validação da data inicial (initialDate) e data final (finalDate), e ao TypeVO a validação do tipo (type) disponível na requisição (request); 
 ### A3 - 

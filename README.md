@@ -68,7 +68,7 @@ O serviço de aplicação (DelegateCashFlowAdd) retorna uma mensagem de sucesso 
 ### E1 -
 O usuário envia para Api um ou varios dados inválidos pertinentes ao fluxo de caixa
 ### E2 -
-Api retorna uma mensagem de erro informando o ocorido.
+Api retorna uma mensagem de erro informando o ocorrido.
 
 ## Diagrama de Caso de Uso Atualizar Fluxo de Caixa
 ![alt text](https://github.com/fabiomattheus/cash-flow-controller-api-ddd-laravel/blob/main/app/core/Diagrams/update_cah_flow_use_case_diagram.drawio.png)

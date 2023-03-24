@@ -96,7 +96,7 @@ O reposiório registra os dados pertinentes à atualização do fluxo de caixa;
 ### P6 -
 O serviço de aplicação (DelegateCashFlowUpdate) delega ao serviço de domínio (UpdateCashFlowBalance) que atualize saldo; 
 ### P7 - 
-serviço de dominio (UpdateCashFlowBalance) solicita ao repositório à atualização do saldo;
+O serviço de dominio (UpdateCashFlowBalance) solicita ao repositório à atualização do saldo;
 ### P8 -
 O reposiório atualiza os dados do fluxo de caixa no banco de dados.  
 ### P9  -

@@ -6,7 +6,7 @@ use Domain\Entities\CashFlow;
 use Domain\Entities\Contracts\CashFlowEntityInterface;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\Request;
-//use PHPUnit\Framework\TestCase;
+
 use Tests\TestCase;
 
 class CashFlowTest extends TestCase
@@ -56,7 +56,7 @@ class CashFlowTest extends TestCase
             'identifier' => 'required|string|unique:cash_flows,identifier,' . $this->request->id ?? null,
             'note' => 'required|string',
             'description' => 'required|string',
-            'type' => 'required|string',
+            'type' => 'required|in:all,credit,debit',
             'movimentation_date' => 'required|date',
             'value' => 'required|numeric|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
             'departament_id' => 'required|uuid',

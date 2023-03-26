@@ -29,10 +29,17 @@ class FindAllCashFlowsByDateDomService implements FindAllCashFlowsByDateDomServi
 
     public function execute()
     {
-
         $request = App::make(Request::class);
-        $dateVO =  App::makeWith(DateVOInterface::class);      
-        $typeVO =  App::makeWith(TypeVoInterface::class);
-        return $this->repository->findAllByDate($dateVO, $typeVO, 10,$request->page);
+        try {
+            $dateVO =  App::makeWith(DateVOInterface::class);
+            $typeVO =  App::makeWith(TypeVoInterface::class);    
+            return $this->repository->findAllByDate($dateVO, $typeVO, 10, $request->page);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            throw $e;
+        } catch (\Throwable $th) {
+            throw $th;
+        } finally {
+            unset($typeVO, $dateVO, $request);
+        }
     }
 }

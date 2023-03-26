@@ -8,7 +8,7 @@ use Domain\Entities\CashFlow;
 use Illuminate\Testing\TestResponse;
 
 
-class FindApiAllCashFlowsByIdTest extends TestCase
+class FindApiCashFlowsByIdTest extends TestCase
 {
     private  function sendApi(CashFlow $cashFlow = null): TestResponse
     {

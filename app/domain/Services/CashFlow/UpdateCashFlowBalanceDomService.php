@@ -9,6 +9,7 @@ use Application\Services\Contracts\CashFlow\UpdateCashFlowBalanceDomServiceInter
 use Domain\Aggregates\Contracts\CashFlowBalanceAggregateInterface as Entity;
 use Domain\Repositories\Eloquent\CashFlowEloquentRepositoryInterface as Repository;
 use Domain\Dto\Contracts\DtoInterface;
+use Illuminate\Support\Facades\DB;
 
 class UpdateCashFlowBalanceDomService implements UpdateCashFlowBalanceDomServiceInterface
 {
@@ -22,13 +23,22 @@ class UpdateCashFlowBalanceDomService implements UpdateCashFlowBalanceDomService
     ) {
         $this->entity = $entity;
         $this->repository = $repository;
-   }
+    }
 
     public function execute()
     {
-        $request = App::make(Request::class);
-        $dto = App::makeWith(DtoInterface::class);
-        $this->repository->updateBalance($dto::fromRequest($this->entity, true));
-        unset($request, $dto);
+        try {
+            $request = App::make(Request::class);
+            $dto = App::makeWith(DtoInterface::class);
+            $this->repository->updateBalance($dto::fromRequest($this->entity, true));
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            DB::rollBack();
+            throw $e;
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        } finally {
+            unset($request, $dto);
+        }
     }
 }

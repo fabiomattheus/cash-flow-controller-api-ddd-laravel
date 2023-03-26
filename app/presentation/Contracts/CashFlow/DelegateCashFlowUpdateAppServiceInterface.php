@@ -2,7 +2,7 @@
 
 namespace Presentation\Contracts\CashFlow;
 
-interface AddCashFlowAppServiceInterface
+interface DelegateCashFlowUpdateAppServiceInterface
 {
     public function execute();
 }

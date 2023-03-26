@@ -36,5 +36,22 @@ class UpdateApiCashFlowTest extends TestCase
         $this->sendApi($this->cashFlow, $this->cashFlowBalance)
             //Assert    
             ->assertStatus(200);
-    }
+    
+
+    $this->assertDatabaseHas(
+        'cash_flows',
+        [
+            "description" => $this->cashFlow->description,
+            "type" => $this->cashFlow->type,
+            "value" => $this->cashFlow->value,
+            "note" => $this->cashFlow->note,
+        ]
+    );
+    $this->assertDatabaseHas(
+        'cash_flow_balances',
+        [
+            'balance' => $this->cashFlowBalance->balance
+        ]
+    );
+}
 }

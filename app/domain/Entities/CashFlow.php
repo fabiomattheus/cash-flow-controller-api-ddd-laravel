@@ -5,12 +5,15 @@ namespace Domain\Entities;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
+use Illuminate\Validation\Rules\Enum;
 
 use Domain\Aggregates\CashFlowBalance;
 use Domain\Aggregates\OperationType;
 use Domain\Entities\Contracts\CashFlowEntityInterface;
+use Domain\Entities\Enums\CashFlowTypeEnum;
 use Domain\Traits\GeneratePrimaryKeyUuid;
 use Illuminate\Http\Request;
+
 
 /**
  * @property uuid $id
@@ -44,6 +47,7 @@ class CashFlow extends Model implements CashFlowEntityInterface
         'operation_type_id',
         'employee_id'
     ];
+    
 
     /**
      * @return array
@@ -56,7 +60,7 @@ class CashFlow extends Model implements CashFlowEntityInterface
             'identifier' => 'required|string|unique:cash_flows,identifier,' . $request->id ?? null,
             'note' => 'required|string',
             'description' => 'required|string',
-            'type' => 'required|string',
+            'type' => 'required|in:all,credit,debit',
             'movimentation_date' => 'required|date',
             'value' => 'required|numeric|regex:/^[0-9]+(\.[0-9][0-9]?)?$/',
             'departament_id' => 'required|uuid',

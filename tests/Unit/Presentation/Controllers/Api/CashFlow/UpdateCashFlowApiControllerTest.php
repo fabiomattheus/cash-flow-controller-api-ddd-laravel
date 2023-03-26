@@ -5,7 +5,7 @@ namespace Tests\Unit\Presentation\Controllers\Api\CashFlow;
 use Mockery;
 use PHPUnit\Framework\TestCase;
 
-use Presentation\Contracts\CashFlow\UpdateCashFlowAppServiceInterface;
+use Presentation\Contracts\CashFlow\DelegateCashFlowUpdateAppServiceInterface;
 use Presentation\Controllers\Api\CashFlow\UpdateCashFlowApiController;
 
 class UpdateCashFlowApiControllerTest extends TestCase
@@ -14,7 +14,7 @@ class UpdateCashFlowApiControllerTest extends TestCase
     protected $updateCashController;
     protected function setUp(): void
     {
-        $this->updateCashFlowMock = Mockery::mock(UpdateCashFlowAppServiceInterface::class);
+        $this->updateCashFlowMock = Mockery::mock(DelegateCashFlowUpdateAppServiceInterface::class);
         $this->updateCashController = new UpdateCashFlowApiController(
             $this->updateCashFlowMock
         );

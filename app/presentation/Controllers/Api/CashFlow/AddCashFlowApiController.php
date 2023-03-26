@@ -4,7 +4,7 @@ namespace Presentation\Controllers\Api\CashFlow;
 
 use App\Http\Controllers\Controller;
 
-use Presentation\Contracts\CashFlow\AddCashFlowAppServiceInterface  as AddCashFlow;
+use Presentation\Contracts\CashFlow\DelegateCashFlowAddAppServiceInterface  as AddCashFlow;
 
 
 class AddCashFlowApiController extends Controller

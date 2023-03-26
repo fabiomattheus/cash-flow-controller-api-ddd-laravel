@@ -21,6 +21,7 @@ interface CashFlowEloquentRepositoryInterface
     public function update(iterable $data);
     public function delete(String $id);
     public function destroy(Id $id);
+    public function deleteBalance(Id $id);
     public function createBalance(Iterable $data);
     public function updateBalance(Iterable $data);
     public function getByIdentifierVO(Identifier $identifier);

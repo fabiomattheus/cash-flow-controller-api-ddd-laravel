@@ -8,8 +8,17 @@ use Illuminate\Contracts\Support\Arrayable;
 
 class Error implements Arrayable, Jsonable, JsonSerializable
 {
-    public function __construct(string $help = '', string $error = '')
+    protected $help;
+    protected $error;
+    protected $message;
+    protected $stackTrace;
+
+    public function __construct(string $help = '', string $error = '', string  $stackTrace = '', string  $message = '')
     {
+        $this->error = $help;
+        $this->help = $error;
+        $this->stackTrace = $stackTrace;
+        $this->message = $message;
     }
 
     public function toArray(): array
@@ -17,6 +26,8 @@ class Error implements Arrayable, Jsonable, JsonSerializable
         return [
             'error' => $this->error,
             'help' => $this->help,
+            'message' =>  $this->message,
+            'trace' => $this->stackTrace,
         ];
     }
 

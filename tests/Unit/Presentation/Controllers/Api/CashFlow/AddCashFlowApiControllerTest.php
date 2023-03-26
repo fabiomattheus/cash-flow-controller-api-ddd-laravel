@@ -6,6 +6,7 @@ use Mockery;
 use PHPUnit\Framework\TestCase;
 
 use Presentation\Contracts\CashFlow\AddCashFlowAppServiceInterface;
+use Presentation\Contracts\CashFlow\DelegateCashFlowAddAppServiceInterface;
 use Presentation\Controllers\Api\CashFlow\AddCashFlowApiController;
 
 class AddCashFlowApiControllerTest extends TestCase
@@ -14,7 +15,7 @@ class AddCashFlowApiControllerTest extends TestCase
     protected $addCashController;
     protected function setUp(): void
     {
-        $this->addCashFlowMock = Mockery::mock(AddCashFlowAppServiceInterface::class);
+        $this->addCashFlowMock = Mockery::mock(DelegateCashFlowAddAppServiceInterface::class);
         $this->addCashController = new AddCashFlowApiController(
             $this->addCashFlowMock
             

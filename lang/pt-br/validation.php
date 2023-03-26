@@ -203,6 +203,8 @@ return [
         'identifier'=>'identificador',
         'father_name'=>'nome do pai',
         'mother_name'=>'nome da mãe',
+        'initialDate'=>'data inicial', 
+        'finalDate'=>'data final',  
     ],
 
 ];

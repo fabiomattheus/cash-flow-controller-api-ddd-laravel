@@ -8,6 +8,7 @@ use Domain\Repositories\Eloquent\CashFlowEloquentRepositoryInterface;
 use Infrastructure\Repositories\Eloquent\BaseRepository;
 use Domain\VOs\DateVo as Date;
 use Domain\VOs\TypeVo as Type;
+use Domain\VOs\IdVO as Id;
 use Domain\VOs\Contracts\IdentifierVOInterface as Identifier;
 
 
@@ -17,6 +18,12 @@ class CashFlowEloquentRepository extends BaseRepository implements CashFlowEloqu
 
     protected $modelClass = CashFlow::class;
 
+    public function deleteBalance(Id $id)
+    {
+        $this->setModel(CashFlowBalance::class);
+        return $this->destroy($id);
+    }
+    
     public function createBalance(Iterable $data)
     {
         $this->setModel(CashFlowBalance::class);

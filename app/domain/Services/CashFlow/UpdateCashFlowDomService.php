@@ -3,6 +3,7 @@
 namespace Domain\Services\CashFlow;
 
 use Illuminate\Support\Facades\App;
+use Illuminate\Http\Request;
 
 use Application\Services\Contracts\CashFlow\UpdateCashFlowDomServiceInterface;
 use Domain\Entities\Contracts\CashFlowEntityInterface as Entity;
@@ -25,8 +26,18 @@ class UpdateCashFlowDomService implements UpdateCashFlowDomServiceInterface
 
     public function execute()
     {
-        $dto = App::makeWith(DtoInterface::class);
-        $this->repository->update($dto::fromRequest($this->entity));
-        unset($dto, $callBack);
+        try {
+            $request = App::make(Request::class);
+            $dto = App::makeWith(DtoInterface::class);
+            $this->repository->update($dto::fromRequest($this->entity));
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            throw $e;
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            throw $e;
+        } catch (\Throwable $th) {
+            throw $th;
+        } finally {
+            unset($dto, $request);
+        }
     }
 }

@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\DB;
 use Application\Services\Contracts\CashFlow\UpdateCashFlowDomServiceInterface as UpdateCashFlow;
 use Application\Services\Contracts\CashFlow\UpdateCashFlowBalanceDomServiceInterface as UpdateCashFlowBalance;
 use Domain\Dto\Contracts\DtoInterface;
-use Presentation\Contracts\CashFlow\UpdateCashFlowAppServiceInterface;
+use Presentation\Contracts\CashFlow\DelegateCashFlowUpdateAppServiceInterface;
 
-class UpdateCashFlowAppService implements UpdateCashFlowAppServiceInterface
+class DelegateCashFlowUpdateAppService implements DelegateCashFlowUpdateAppServiceInterface
 {  
     protected $updateCashFlow;
     protected $updateCashFlowBalance;

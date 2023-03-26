@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Application\Services\CashFlow\AddCashFlowAppService;
-use Application\Services\CashFlow\UpdateCashFlowAppService;
+use Application\Services\CashFlow\DelegateCashFlowAddAppService;
+use Application\Services\CashFlow\DelegateCashFlowUpdateAppService;
 use Application\Services\Contracts\CashFlow\AddCashFlowBalanceDomServiceInterface;
 use Application\Services\Contracts\CashFlow\AddCashFlowDomServiceInterface;
 use Application\Services\Contracts\CashFlow\GenerateCodeCashFlowDomServiceInterface;
@@ -24,11 +24,11 @@ use Domain\Services\CashFlow\UpdateCashFlowBalanceDomService;
 use Domain\Services\CashFlow\UpdateCashFlowDomService;
 use Illuminate\Support\ServiceProvider;
 use Infrastructure\Repositories\Eloquent\CashFlowEloquentRepository;
-use Presentation\Contracts\CashFlow\AddCashFlowAppServiceInterface;
+use Presentation\Contracts\CashFlow\DelegateCashFlowAddAppServiceInterface;
+use Presentation\Contracts\CashFlow\DelegateCashFlowUpdateAppServiceInterface;
 use Presentation\Contracts\CashFlow\DeleteCashFlowDomServiceInterface;
 use Presentation\Contracts\CashFlow\FindAllCashFlowsByDateDomServiceInterface;
 use Presentation\Contracts\CashFlow\FindCashFlowByIdDomServiceInterface;
-use Presentation\Contracts\CashFlow\UpdateCashFlowAppServiceInterface;
 
 class CashFlowServiceProvider extends ServiceProvider
 {
@@ -39,14 +39,14 @@ class CashFlowServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(AddCashFlowAppServiceInterface::class, AddCashFlowAppService::class);
+        $this->app->bind(DelegateCashFlowAddAppServiceInterface::class, DelegateCashFlowAddAppService::class);
         $this->app->bind(AddCashFlowDomServiceInterface::class, AddCashFlowDomService::class);
         $this->app->bind(AddCashFlowBalanceDomServiceInterface::class, AddCashFlowBalanceDomService::class);
         $this->app->bind(CashFlowEntityInterface::class, CashFlow::class); 
         $this->app->bind(CashFlowEloquentRepositoryInterface::class, CashFlowEloquentRepository::class); 
         $this->app->bind(CashFlowBalanceAggregateInterface::class, CashFlowBalance::class); 
     
-        $this->app->bind(UpdateCashFlowAppServiceInterface::class, UpdateCashFlowAppService::class);
+        $this->app->bind(DelegateCashFlowUpdateAppServiceInterface::class, DelegateCashFlowUpdateAppService::class);
         $this->app->bind(UpdateCashFlowDomServiceInterface::class, UpdateCashFlowDomService::class);
         $this->app->bind(UpdateCashFlowBalanceDomServiceInterface::class, UpdateCashFlowBalanceDomService::class);
         
